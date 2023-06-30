@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="TRSPOexp.Properties.ToolWindow1Control"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             mc:Ignorable="d"
+             Name="MyToolWindow" Width="Auto" Height="Auto" d:DesignHeight="753.616" d:DesignWidth="1384.616">
+    <Grid Width="Auto" Height="Auto">
+        <ToolBarTray HorizontalAlignment="Center" Background="#FF1F1F1F" Height="40" VerticalAlignment="Top">
+            <ToolBar Background="#FF1A1A1A" Name="MyToolbar" Width="Auto" Height="40" >
+                <Button Background="#FF1A1A1A" Content="Update" Click="Update" Foreground="#FFBEFFFF" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </ToolBar>
+        </ToolBarTray>
+        <DataGrid Margin="0,30,0,0" Name="table" Height="Auto" Background="#FF1F1F1F" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Function's name" Binding="{Binding Function}" Foreground="#FF1A1A1A"/>
+                <DataGridTextColumn Width="*" Header="Key words" Binding="{Binding KeyWords}"/>
+                <DataGridTextColumn Width="*" Header="All lines" Binding="{Binding AllLines}"/>
+                <DataGridTextColumn Width="*" Header="Code lines" Binding="{Binding LinesWithoutCom}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
